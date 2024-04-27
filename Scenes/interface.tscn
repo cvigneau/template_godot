@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://3t3mrb7snvrw"]
+
+[ext_resource type="Script" path="res://Scripts/scriptinterface.gd" id="1_nmoeq"]
+[ext_resource type="Texture2D" uid="uid://dft1tx5kt1kw1" path="res://Sprite/Spritedef/Decordef/coindef.png" id="2_4j3vi"]
+[ext_resource type="Texture2D" uid="uid://cs1oiv3fp5hfe" path="res://Sprite/Spritedef/Decordef/life.png" id="3_h6lqa"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_nmoeq")
+
+[node name="piece_img" type="TextureRect" parent="CanvasLayer"]
+offset_right = 84.0
+offset_bottom = 84.0
+texture = ExtResource("2_4j3vi")
+
+[node name="piece_nb" type="Label" parent="CanvasLayer"]
+offset_left = 100.0
+offset_top = 8.0
+offset_right = 237.0
+offset_bottom = 54.0
+
+[node name="life_img" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1062.0
+offset_top = -3.0
+offset_right = 1156.0
+offset_bottom = 76.0
+texture = ExtResource("3_h6lqa")
+expand_mode = 1
+
+[node name="life_nb" type="Label" parent="CanvasLayer"]
+offset_left = 1023.0
+offset_right = 1063.0
+offset_bottom = 23.0
+horizontal_alignment = 2

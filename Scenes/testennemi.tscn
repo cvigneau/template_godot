@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://wcn2r08tkovl"]
+
+[ext_resource type="PackedScene" path="res://Scenes/ennemi.tscn" id="1_ads4s"]
+[ext_resource type="PackedScene" uid="uid://c00bf1p1lfe87" path="res://Scenes/invisible_walls.tscn" id="2_y0ja7"]
+
+[node name="Ennemimob" type="Node2D"]
+
+[node name="Ennemi" parent="." instance=ExtResource("1_ads4s")]
+
+[node name="spritedef" parent="Ennemi/Sprite" index="1"]
+visible = false
+
+[node name="InvisibleWalls" parent="." instance=ExtResource("2_y0ja7")]
+position = Vector2(-134, 29)
+
+[editable path="Ennemi"]

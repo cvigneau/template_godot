@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://dmrpi7w2agre" path="res://Sprite/Spritedef/Decordef/backgroundimagedef.png" id="1_nnh13"]
+[ext_resource type="Texture2D" uid="uid://dx2oey00kcrvp" path="res://Sprite/Spriteplaceholder/Decorplaceholder/background.jpg" id="2_em07o"]
+
+[node name="Backgroundimage" type="Node2D"]
+
+[node name="spritedef" type="TextureRect" parent="."]
+offset_left = -1497.0
+offset_top = -1114.0
+offset_right = 2560.0
+offset_bottom = 1905.0
+texture = ExtResource("1_nnh13")
+
+[node name="spriteplaceholder" type="TextureRect" parent="."]
+offset_left = -1238.0
+offset_top = -1109.0
+offset_right = 2139.0
+offset_bottom = 1883.0
+texture = ExtResource("2_em07o")

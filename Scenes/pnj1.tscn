@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2pdgt1jc5l37"]
+
+[ext_resource type="Texture2D" uid="uid://bgmgoanhcm1em" path="res://Sprite/Spriteplaceholder/Pnjplaceholder/pnj1.png" id="1_g64qd"]
+[ext_resource type="Texture2D" uid="uid://bq2yppgpjchph" path="res://Sprite/Spritedef/Pnjdef/pnj1def.png" id="2_dioe7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jof71"]
+radius = 74.0
+height = 148.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yodyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g64qd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e3it"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dioe7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pnj1" type="Area2D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jof71")
+
+[node name="textdef" type="TextEdit" parent="."]
+visible = false
+offset_left = 77.0
+offset_top = -58.0
+offset_right = 291.0
+offset_bottom = 59.0
+text = "je suis le pnj1"
+placeholder_text = "placeholder text"
+
+[node name="spriteplaceholder" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -5)
+scale = Vector2(0.175293, 0.175293)
+sprite_frames = SubResource("SpriteFrames_yodyb")
+
+[node name="spritedef" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-2, -23)
+scale = Vector2(1.26161, 1.26161)
+sprite_frames = SubResource("SpriteFrames_8e3it")
+
+[node name="textplaceholder" type="TextEdit" parent="."]
+offset_left = 83.0
+offset_top = -149.0
+offset_right = 294.0
+offset_bottom = -33.0
+text = "texte placeholder"

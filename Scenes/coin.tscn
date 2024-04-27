@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxbmnk5g7rr7d"]
+
+[ext_resource type="Texture2D" uid="uid://dft1tx5kt1kw1" path="res://Sprite/Spritedef/Decordef/coindef.png" id="1_mscpg"]
+[ext_resource type="Texture2D" uid="uid://r02hnsd82cvd" path="res://Sprite/Spriteplaceholder/Decorplaceholder/coin.png" id="1_y8xc6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejf1h"]
+radius = 13.2749
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w86yf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mscpg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkiuk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y8xc6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Coin" type="Area2D" groups=["Coins"]]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.24, 3.4)
+shape = SubResource("CircleShape2D_ejf1h")
+
+[node name="spritedef" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-7.15256e-07, -5.24521e-06)
+scale = Vector2(0.857143, 0.880309)
+sprite_frames = SubResource("SpriteFrames_w86yf")
+
+[node name="spriteplaceholder" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0734694, 0.0760204)
+sprite_frames = SubResource("SpriteFrames_pkiuk")

@@ -1,0 +1,349 @@
+[gd_scene load_steps=16 format=3 uid="uid://bvjf4we0360vp"]
+
+[ext_resource type="PackedScene" path="res://Scenes/platform.tscn" id="1_y8p1n"]
+[ext_resource type="Script" path="res://Scripts/level2.gd" id="1_yehv1"]
+[ext_resource type="Script" path="res://Scripts/variablesglobales.gd" id="2_x4ndr"]
+[ext_resource type="PackedScene" uid="uid://c6upicqr3d8ng" path="res://Scenes/player.tscn" id="3_lkcki"]
+[ext_resource type="PackedScene" uid="uid://db1jhxvl4gdd5" path="res://Scenes/pnjs.tscn" id="7_ssyhd"]
+[ext_resource type="PackedScene" uid="uid://bxbmnk5g7rr7d" path="res://Scenes/coin.tscn" id="7_uydg2"]
+[ext_resource type="PackedScene" uid="uid://crjrbobsf7pr4" path="res://Scenes/panneaustart.tscn" id="8_5cso0"]
+[ext_resource type="Script" path="res://Scripts/pnj.gd" id="9_ny6d7"]
+[ext_resource type="PackedScene" uid="uid://3t3mrb7snvrw" path="res://Scenes/interface.tscn" id="10_x4ox7"]
+[ext_resource type="PackedScene" uid="uid://2sugv676q6nl" path="res://Scenes/panneauend.tscn" id="11_rhwva"]
+[ext_resource type="PackedScene" uid="uid://dog2rlfvs5nhq" path="res://Scenes/arrivee.tscn" id="12_7a3ff"]
+[ext_resource type="Script" path="res://Scripts/musiqueniveau.gd" id="14_7hnvp"]
+[ext_resource type="PackedScene" uid="uid://d7l80qfwpwm2" path="res://Scenes/vide.tscn" id="15_mryl2"]
+[ext_resource type="PackedScene" path="res://Scenes/backgroundimage.tscn" id="15_qtbjh"]
+[ext_resource type="PackedScene" uid="uid://wcn2r08tkovl" path="res://Scenes/testennemi.tscn" id="16_r2yed"]
+
+[node name="Level2" type="Node2D"]
+position = Vector2(-4, 1)
+script = ExtResource("1_yehv1")
+
+[node name="Backgroundimage" parent="." groups=["imagecharacter"] instance=ExtResource("15_qtbjh")]
+z_index = -1
+
+[node name="spritedef" parent="Backgroundimage" index="0"]
+offset_left = -846.0
+offset_top = -903.0
+offset_right = 2618.0
+offset_bottom = 1788.0
+
+[node name="spriteplaceholder" parent="Backgroundimage" index="1"]
+visible = false
+offset_left = -755.0
+offset_top = -669.0
+offset_right = 2823.0
+offset_bottom = 1902.0
+
+[node name="Gamemanager" type="Node2D" parent="."]
+script = ExtResource("2_x4ndr")
+
+[node name="Plateformes" type="Node2D" parent="."]
+
+[node name="Platform" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(219, -340)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform" index="0"]
+visible = false
+
+[node name="Platform2" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(740, -216)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform2" index="0"]
+visible = false
+
+[node name="Platform3" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(1203, -340)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform3" index="0"]
+visible = false
+
+[node name="Platform4" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(1631, 124)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform4" index="0"]
+visible = false
+
+[node name="Platform5" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(2456, 254)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform5" index="0"]
+visible = false
+
+[node name="Platform6" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(1076, 400)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform6" index="0"]
+visible = false
+
+[node name="Platform7" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(613, 525)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform7" index="0"]
+visible = false
+
+[node name="Platform8" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(2035, -266)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform8" index="0"]
+visible = false
+
+[node name="Platform9" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(146, 744)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform9" index="0"]
+visible = false
+
+[node name="Platform10" parent="Plateformes" groups=["imagecharacter"] instance=ExtResource("1_y8p1n")]
+position = Vector2(2044, 266)
+
+[node name="spriteplaceholder" parent="Plateformes/Platform10" index="0"]
+visible = false
+
+[node name="Player" parent="." groups=["imagecharacter"] instance=ExtResource("3_lkcki")]
+position = Vector2(58, -519)
+
+[node name="Sprite" parent="Player" index="4" groups=["imagecharacter"]]
+
+[node name="spriteplaceholder" parent="Player/Sprite" index="0"]
+visible = false
+
+[node name="spritedef" parent="Player/Sprite" index="1"]
+visible = true
+
+[node name="Pnjs" parent="." instance=ExtResource("7_ssyhd")]
+position = Vector2(38, -2)
+
+[node name="Pnj1" parent="Pnjs" index="0" groups=["imagecharacter", "txt"]]
+position = Vector2(1022, -515)
+
+[node name="textdef" parent="Pnjs/Pnj1" index="1"]
+visible = true
+offset_top = -96.0
+offset_right = 414.0
+text = "Bonjour T1.
+Il paraît que tu viens récupérer les pièces.
+Oh, je vois que tu en as déjà une !
+Bravo, continue comme ça."
+
+[node name="spriteplaceholder" parent="Pnjs/Pnj1" index="2"]
+visible = false
+
+[node name="spritedef" parent="Pnjs/Pnj1" index="3"]
+visible = true
+
+[node name="textplaceholder" parent="Pnjs/Pnj1" index="4"]
+visible = false
+
+[node name="Pnj2" parent="Pnjs" index="1" groups=["imagecharacter", "txt"]]
+position = Vector2(1498, -55)
+
+[node name="textdef" parent="Pnjs/Pnj2" index="1"]
+visible = true
+offset_right = 323.0
+text = "Je sais que la dernière pièce
+se trouve dans une zone 
+cachée en bas. "
+
+[node name="spriteplaceholder" parent="Pnjs/Pnj2" index="2"]
+visible = false
+position = Vector2(5.0625, -5.06249)
+scale = Vector2(0.191162, 0.175537)
+
+[node name="spritedef" parent="Pnjs/Pnj2" index="3"]
+visible = true
+
+[node name="textplaceholder" parent="Pnjs/Pnj2" index="4"]
+visible = false
+
+[node name="Pnj3" parent="Pnjs" index="2" groups=["imagecharacter", "txt"]]
+position = Vector2(431, 331)
+
+[node name="textdef" parent="Pnjs/Pnj3" index="1"]
+visible = true
+offset_right = 307.0
+offset_bottom = 70.0
+text = "J'ai un détecteur de métaux 
+qui m'indique qu'une pièce 
+est toute proche."
+
+[node name="spriteplaceholder" parent="Pnjs/Pnj3" index="2"]
+visible = false
+
+[node name="spritedef" parent="Pnjs/Pnj3" index="3"]
+visible = true
+
+[node name="textplaceholder" parent="Pnjs/Pnj3" index="4"]
+visible = false
+
+[node name="Pnj4" parent="Pnjs" index="3" groups=["imagecharacter", "txt"]]
+position = Vector2(1942, -459)
+
+[node name="textdef" parent="Pnjs/Pnj4" index="1"]
+visible = true
+text = "Tu es plutôt sympathique.
+Allez, voilà une pièce."
+
+[node name="spriteplaceholder" parent="Pnjs/Pnj4" index="2"]
+visible = false
+
+[node name="spritedef" parent="Pnjs/Pnj4" index="3"]
+visible = true
+
+[node name="textplaceholder" parent="Pnjs/Pnj4" index="4"]
+visible = false
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" groups=["imagecharacter"] instance=ExtResource("7_uydg2")]
+position = Vector2(784, -375)
+
+[node name="spritedef" parent="Coins/Coin" index="1"]
+visible = true
+
+[node name="spriteplaceholder" parent="Coins/Coin" index="2"]
+visible = false
+
+[node name="Coin2" parent="Coins" groups=["imagecharacter"] instance=ExtResource("7_uydg2")]
+position = Vector2(2089, -432)
+
+[node name="spritedef" parent="Coins/Coin2" index="1"]
+visible = true
+
+[node name="spriteplaceholder" parent="Coins/Coin2" index="2"]
+visible = false
+position = Vector2(2, 0)
+scale = Vector2(0.0698697, 0.0738464)
+
+[node name="Coin3" parent="Coins" groups=["imagecharacter"] instance=ExtResource("7_uydg2")]
+position = Vector2(135, 584)
+
+[node name="spritedef" parent="Coins/Coin3" index="1"]
+visible = true
+
+[node name="spriteplaceholder" parent="Coins/Coin3" index="2"]
+visible = false
+
+[node name="Ennemis" type="Node2D" parent="."]
+position = Vector2(-19, -648)
+
+[node name="Ennemimob" parent="Ennemis" instance=ExtResource("16_r2yed")]
+position = Vector2(1045, 880)
+
+[node name="Ennemi" parent="Ennemis/Ennemimob" index="0" groups=["Ennemis", "imagecharacter"]]
+
+[node name="Sprite" parent="Ennemis/Ennemimob/Ennemi" index="2" groups=["imagecharacter"]]
+
+[node name="spriteplaceholder" parent="Ennemis/Ennemimob/Ennemi/Sprite" index="0"]
+visible = false
+
+[node name="spritedef" parent="Ennemis/Ennemimob/Ennemi/Sprite" index="1"]
+visible = true
+
+[node name="Panneaux" type="Node2D" parent="."]
+
+[node name="Panneaustart" parent="Panneaux" groups=["imagecharacter", "pnjs", "txt"] instance=ExtResource("8_5cso0")]
+position = Vector2(249, -525)
+script = ExtResource("9_ny6d7")
+
+[node name="textdef" parent="Panneaux/Panneaustart" index="1"]
+text = "Règles pour les robots : 
+1. Les robots doivent Récolter des pièces et les apporter 
+dans la zone d'arrivée
+2. Les robots ont le droit de parler aux humains.
+3. Les robots doivent se méfier des autres robots.
+4. Les robots ont des vies artificielles.
+5. Tomber dans le vide est mortel...même pour les robots."
+
+[node name="spriteplaceholder" parent="Panneaux/Panneaustart" index="2"]
+visible = false
+
+[node name="spritedef" parent="Panneaux/Panneaustart" index="3"]
+visible = true
+
+[node name="Panneauend" parent="Panneaux" groups=["imagecharacter", "pnjs", "txt"] instance=ExtResource("11_rhwva")]
+position = Vector2(1859, 76)
+script = ExtResource("9_ny6d7")
+
+[node name="textdef" parent="Panneaux/Panneauend" index="1"]
+offset_right = 397.0
+text = "Est-ce que tu as bien récupéré toutes 
+les pièces ? 
+Si tu ne les as pas toutes, tu ne pourras 
+pas terminer le niveau."
+
+[node name="spriteplaceholder" parent="Panneaux/Panneauend" index="2"]
+visible = false
+
+[node name="spritedef" parent="Panneaux/Panneauend" index="3"]
+visible = true
+
+[node name="Interface" parent="." groups=["interface"] instance=ExtResource("10_x4ox7")]
+visible = false
+
+[node name="piece_img" parent="Interface/CanvasLayer" index="0" groups=["interface"]]
+visible = false
+
+[node name="piece_nb" parent="Interface/CanvasLayer" index="1" groups=["interface"]]
+visible = false
+
+[node name="life_img" parent="Interface/CanvasLayer" index="2" groups=["interface"]]
+visible = false
+
+[node name="life_nb" parent="Interface/CanvasLayer" index="3" groups=["interface"]]
+visible = false
+
+[node name="Arrivee" parent="." groups=["Arrivee", "imagecharacter"] instance=ExtResource("12_7a3ff")]
+position = Vector2(2342, 59)
+
+[node name="spritedef" parent="Arrivee" index="2"]
+visible = true
+
+[node name="spriteplaceholder" parent="Arrivee" index="3"]
+visible = false
+
+[node name="Musiqueniveau" type="AudioStreamPlayer" parent="."]
+script = ExtResource("14_7hnvp")
+
+[node name="Vide" parent="." groups=["Vide"] instance=ExtResource("15_mryl2")]
+position = Vector2(706, 1702)
+
+[node name="CollisionShape2D" parent="Vide" index="0"]
+position = Vector2(321.5, 0)
+
+[connection signal="tree_entered" from="Player" to="." method="_on_player_tree_entered"]
+[connection signal="area_entered" from="Player/Area2D" to="Pnjs" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Player/Area2D" to="Pnjs" method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="tree_entered" from="Pnjs" to="." method="_on_pnjs_tree_entered"]
+[connection signal="tree_entered" from="Ennemis" to="." method="_on_ennemis_tree_entered"]
+[connection signal="tree_entered" from="Musiqueniveau" to="." method="_on_musiqueniveau_tree_entered"]
+
+[editable path="Backgroundimage"]
+[editable path="Plateformes/Platform"]
+[editable path="Plateformes/Platform2"]
+[editable path="Plateformes/Platform3"]
+[editable path="Plateformes/Platform4"]
+[editable path="Plateformes/Platform5"]
+[editable path="Plateformes/Platform6"]
+[editable path="Plateformes/Platform7"]
+[editable path="Plateformes/Platform8"]
+[editable path="Plateformes/Platform9"]
+[editable path="Plateformes/Platform10"]
+[editable path="Player"]
+[editable path="Pnjs"]
+[editable path="Pnjs/Pnj1"]
+[editable path="Pnjs/Pnj2"]
+[editable path="Pnjs/Pnj3"]
+[editable path="Pnjs/Pnj4"]
+[editable path="Coins/Coin"]
+[editable path="Coins/Coin2"]
+[editable path="Coins/Coin3"]
+[editable path="Ennemis/Ennemimob"]
+[editable path="Ennemis/Ennemimob/Ennemi"]
+[editable path="Panneaux/Panneaustart"]
+[editable path="Panneaux/Panneauend"]
+[editable path="Interface"]
+[editable path="Arrivee"]
+[editable path="Vide"]

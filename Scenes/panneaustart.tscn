@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://crjrbobsf7pr4"]
+
+[ext_resource type="Texture2D" uid="uid://dcaor46x2wxbr" path="res://Sprite/Spriteplaceholder/Decorplaceholder/panneau.png" id="1_1temc"]
+[ext_resource type="Texture2D" uid="uid://d4hk3fe3jmlue" path="res://Sprite/Spritedef/Decordef/panneaudef.png" id="2_dfcoa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jof71"]
+radius = 74.0
+height = 148.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yodyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1temc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e3it"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dfcoa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Panneaustart" type="Area2D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jof71")
+
+[node name="textdef" type="TextEdit" parent="."]
+offset_left = 77.0
+offset_top = -58.0
+offset_right = 549.0
+offset_bottom = 193.0
+text = "C'est le début de l'aventure"
+
+[node name="spriteplaceholder" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0563965, 0.0563965)
+sprite_frames = SubResource("SpriteFrames_yodyb")
+
+[node name="spritedef" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(5.70588, 5.70588)
+sprite_frames = SubResource("SpriteFrames_8e3it")
+
+[node name="textplaceholder" type="TextEdit" parent="."]
+visible = false
+offset_left = 83.0
+offset_top = -149.0
+offset_right = 581.0
+offset_bottom = 209.0
+text = "texte placeholder"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgvektveav3i2"
+path="res://.godot/imported/saut.wav-4e74c2840435ab700eeb26a6ce18e375.sample"
+
+[deps]
+
+source_file="res://Sons/Sons à remplacer/saut.wav"
+dest_files=["res://.godot/imported/saut.wav-4e74c2840435ab700eeb26a6ce18e375.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

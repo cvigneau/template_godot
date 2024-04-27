@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpfyp4pkfmt7w"]
+
+[ext_resource type="Script" path="res://Scripts/controllerennemi.gd" id="1_draq3"]
+[ext_resource type="Texture2D" uid="uid://dkdiri4mb57xo" path="res://Sprite/Spriteplaceholder/Ennemiplaceholder/ennemi.png" id="2_7fnk0"]
+[ext_resource type="Script" path="res://Scripts/animationennemi.gd" id="2_jl4um"]
+[ext_resource type="Texture2D" uid="uid://y73nfa41g610" path="res://Sprite/Spritedef/Ennemidef/ennemidef1.png" id="2_usd70"]
+[ext_resource type="Texture2D" uid="uid://btt2mtcguvflb" path="res://Sprite/Spritedef/Ennemidef/ennemidef2.png" id="4_qd4jy"]
+[ext_resource type="Texture2D" uid="uid://btrm8vgjln6po" path="res://Sprite/Spritedef/Ennemidef/ennemidef3.png" id="5_77bi6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jof71"]
+radius = 74.0
+height = 148.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urdbc"]
+size = Vector2(169, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yodyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7fnk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7fnk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7fnk0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e3it"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_usd70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qd4jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_77bi6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ennemi" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 25
+script = ExtResource("1_draq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jof71")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4.5, 1.5)
+shape = SubResource("RectangleShape2D_urdbc")
+
+[node name="Sprite" type="Node2D" parent="."]
+script = ExtResource("2_jl4um")
+
+[node name="spriteplaceholder" type="AnimatedSprite2D" parent="Sprite"]
+scale = Vector2(0.265625, 0.246094)
+sprite_frames = SubResource("SpriteFrames_yodyb")
+
+[node name="spritedef" type="AnimatedSprite2D" parent="Sprite"]
+visible = false
+scale = Vector2(0.857899, 0.777899)
+sprite_frames = SubResource("SpriteFrames_8e3it")

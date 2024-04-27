@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dog2rlfvs5nhq"]
+
+[ext_resource type="Texture2D" uid="uid://bgff273hamnt5" path="res://Sprite/Spritedef/Decordef/arriveedef.png" id="1_f6irg"]
+[ext_resource type="Texture2D" uid="uid://q7en0hmyc2qf" path="res://Sprite/Spriteplaceholder/Decorplaceholder/arrivee.png" id="2_r5e7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4nva"]
+size = Vector2(103, 151)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_so1al"]
+size = Vector2(103, 154)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dit3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f6irg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxtjm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r5e7f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Arrivee" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q4nva")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_so1al")
+
+[node name="spritedef" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.175835, 0.175835)
+sprite_frames = SubResource("SpriteFrames_dit3r")
+
+[node name="spriteplaceholder" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.20334, 0.20334)
+sprite_frames = SubResource("SpriteFrames_pxtjm")

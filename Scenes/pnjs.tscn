@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://db1jhxvl4gdd5"]
+
+[ext_resource type="PackedScene" uid="uid://bj5cxat0tb17u" path="res://Scenes/pnj1.tscn" id="1_3klbi"]
+[ext_resource type="Script" path="res://Scripts/pnj.gd" id="1_idjoo"]
+[ext_resource type="PackedScene" uid="uid://dvxqbl3hmv2lc" path="res://Scenes/pnj2.tscn" id="2_qpchk"]
+[ext_resource type="PackedScene" uid="uid://dmb52smnja7o" path="res://Scenes/pnj3.tscn" id="3_biptf"]
+[ext_resource type="PackedScene" uid="uid://dxvsb7hu23wmw" path="res://Scenes/pnj4.tscn" id="4_ls6vc"]
+
+[node name="Pnjs" type="Node2D" groups=["imagecharacter"]]
+script = ExtResource("1_idjoo")
+
+[node name="Pnj1" parent="." groups=["pnjs"] instance=ExtResource("1_3klbi")]
+
+[node name="Pnj2" parent="." groups=["pnjs"] instance=ExtResource("2_qpchk")]
+
+[node name="Pnj3" parent="." groups=["pnjs"] instance=ExtResource("3_biptf")]
+
+[node name="Pnj4" parent="." groups=["pnjs"] instance=ExtResource("4_ls6vc")]
+
+[editable path="Pnj1"]
+[editable path="Pnj2"]
+[editable path="Pnj3"]
+[editable path="Pnj4"]
